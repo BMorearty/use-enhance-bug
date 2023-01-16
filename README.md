@@ -1,38 +1,18 @@
-# create-svelte
+# use:enhance bug?
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+This repo demonstrates what I think is a bug in SvelteKit’s
+<code>use:enhance</code>. Form behavior is different with
+<code>use:enhance</code> than without it.
 
-## Creating a project
+Steps to reproduce the bug:
 
-If you're seeing this, you've probably already done this step. Congrats!
+1. Make a <code>script</code> block that assigns a variable from a <code>data</code> field.
+2. Make a form.
+3. In the form, make an input field with <code>value={myvariable}</code>.
+4. In <code>+page.server.js</code>, save the newly-set value in the form's action. 
+   In <code>load</code>, return the new value.
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+With a plain HTML form, the newly set value gets put into the input field as expected
+after form submission.
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+If you add <code>use:enhance</code> to the form, the input field is blank after submission.

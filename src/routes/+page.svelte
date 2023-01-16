@@ -23,8 +23,9 @@
 </form>
 
 <p>
-  ^ These two forms should work the same. But <code>use:enhance</code> causes the second form not to
-  correctly initialize the value after submit.
+  ^ These two forms should work the same. But <code>use:enhance</code> causes the second form field not
+  to correctly initialize the value after submit. If you refresh the page after submit, the second form
+  field will be initialized.
 </p>
 <p>
   Note that if you use <code>value={'{'}data.city{'}'}</code> instead of
@@ -37,5 +38,8 @@
   }
   code {
     font-family: monospace;
+  }
+  p {
+    max-width: 800px;
   }
 </style>
