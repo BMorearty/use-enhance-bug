@@ -6,7 +6,7 @@
 </script>
 
 <h1><code>use:enhance</code> bug?</h1>
-<p>City is now {data.city}</p>
+<p>City is now {city}</p>
 
 <!-- Traditional form -->
 <form method="POST">
