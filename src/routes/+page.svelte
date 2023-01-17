@@ -2,6 +2,7 @@
   import { enhance } from '$app/forms';
 
   export let data;
+  // Workaround: use $: city = data.city;
   let city = data.city;
 </script>
 
