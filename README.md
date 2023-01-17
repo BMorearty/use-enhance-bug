@@ -4,6 +4,8 @@ This repo demonstrates what I think is a bug in SvelteKit’s
 <code>use:enhance</code>. Form behavior is different with
 <code>use:enhance</code> than without it.
 
+See https://github.com/sveltejs/kit/issues/8513
+
 Steps to reproduce the bug:
 
 1. Make a <code>script</code> block that assigns a variable from a <code>data</code> field.
