@@ -1,7 +1,7 @@
 import { get, put } from '$lib/database.js';
 
 // Load the city
-export async function load({ platform }) {
+export async function load() {
   let city = get('city');
   if (!city) {
     // Set an initial default
