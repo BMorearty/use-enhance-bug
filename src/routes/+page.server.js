@@ -1,4 +1,5 @@
 import { get, put } from '$lib/database.js';
+import { fail } from '@sveltejs/kit';
 
 // Load the city
 export async function load() {
@@ -16,6 +17,10 @@ export const actions = {
   default: async ({ request }) => {
     const data = await request.formData();
     const city = data.get('city');
+    if (city === 'LA') {
+      return fail(400, { city, error: 'Sorry, Los Angeles is not supported'});
+    }
     put('city', city);
+    return { city }
   },
 };

@@ -2,12 +2,20 @@
   import { enhance } from '$app/forms';
 
   export let data;
+  export let form;
   // Workaround: use $: city = data.city;
-  let city = data.city;
+  let city;
+  $: city = form?.city ?? data.city;
 </script>
+
+{#if form?.error}
+  <p style="color: red">{form.error}</p>
+{/if}
 
 <h1><code>use:enhance</code> bug?</h1>
 <p>City is now {city}</p>
+<p>form?.city is {form?.city}</p>
+<p>data.city is {data.city}</p>
 
 <!-- Traditional form -->
 <form method="POST">
