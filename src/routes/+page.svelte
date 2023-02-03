@@ -3,7 +3,6 @@
 
   export let data;
   export let form;
-  // Workaround: use $: city = data.city;
   let city;
   $: city = form?.city ?? data.city;
 </script>
