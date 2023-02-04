@@ -18,9 +18,8 @@ export const actions = {
     const data = await request.formData();
     const city = data.get('city');
     if (city === 'LA') {
-      return fail(400, { city, error: 'Sorry, Los Angeles is not supported'});
+      return fail(400, { city, error: 'Sorry, Los Angeles is not supported' });
     }
     put('city', city);
-    return { city }
   },
 };
